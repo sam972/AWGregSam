@@ -1,0 +1,7 @@
+parameters:
+#    wbn_webinaire.example.class: Wbn\WebinaireBundle\Example
+
+services:
+#    wbn_webinaire.example:
+#        class: %wbn_webinaire.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>{% block title %}Action Webinaire{% endblock %}</title>
+	{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" >
+	<link rel="stylesheet" href="{{ asset('css/css-webinaire.css') }}" type="text/css" />
+	<link rel="stylesheet" href="{{ asset('css/css-jwbox.css') }}" type="text/css" />
+	<link rel="stylesheet" href="{{ asset('http://fonts.googleapis.com/css?family=Droid+Sans:400,700') }}" type="text/css" />
+	{% endblock %}
+</head>
+<body>
+	<div class="site">
+		<div id="wrap">
+			<div id="head">
+				{% block header%}
+				<a href="{{ path('webinaire_accueil') }}">
+					<img src="{{ asset('images/logo.png') }}" id="logo" style="margin-top:15px;">
+				</a>
+				<ul id="nav" style="float:right;">{% if is_granted('ROLE_MEMBRE') %}<li>
+    <a href="{{ path('webinaire_membre') }}">Mes Webinaires</a></li>
+{% endif %}
+					<li>
+						<a href="{{ path('webinaire_apropos') }}" id="about">À propos</a>
+					</li>
+					
+					<li>
+						<a href="{{ path('webinaire_support') }}" id="support">Support</a>
+					</li>
+					<li> {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                <a href="{{ path('fos_user_security_logout') }}">
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% else %}
+                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            {% endif %}
+					</li>
+				</ul>
+				{% endblock%}
+			</div>
+			<div id="topCont">
+			
+      
+				<br>
+				<div style="padding: 10px 0px 15px 0px; text-align:center">
+					<center>
+						{% block body1 %}  {% endblock %} 
+						<div id="botCont">
+							{% block body2 %}  {% endblock %}
+						</div>
+					</div>
+
+
+
+
+					{% block javascripts %}{% endblock %}
+					<div id="footWrap">
+						<div id="foot">
+							<img src="{{ asset('images/footLogo.jpg') }}" class="imgLeft">
+							<ul>
+								<li>
+									<a href="{{ path('webinaire_accueil') }}">Contact</a>
+								</li>
+								<li>
+									<a href="{{ path('webinaire_accueil') }}">Infos</a>
+								</li>
+								<li>
+									<a href="{{ path('webinaire_accueil') }}">Anti-spam</a>
+								</li>
+								<li>
+									<a href="{{ path('webinaire_accueil') }}">Déclaration</a>
+								</li>
+								<li>
+									<a href="{{ path('webinaire_accueil') }}">Partenaires</a>
+								</li>
+								<li>
+						<a href="{{ path('webinaire_faq') }}" id="faq">FAQ</a>
+					</li>
+							</ul>
+						</div> 
+					</div>
+				</div> 
+
+
+			</body>
+			</html>

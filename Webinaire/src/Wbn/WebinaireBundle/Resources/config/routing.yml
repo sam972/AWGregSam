@@ -1,0 +1,19 @@
+webinaire_accueil:
+    pattern:  /
+    defaults: { _controller: WbnWebinaireBundle:Webinaire:index }
+
+webinaire_faq:
+    pattern:  /faq
+    defaults: { _controller: WbnWebinaireBundle:Webinaire:faq }
+
+webinaire_support:
+    pattern:  /support
+    defaults: { _controller: WbnWebinaireBundle:Webinaire:support }
+
+webinaire_apropos:
+    pattern:  /apropos
+    defaults: { _controller: WbnWebinaireBundle:Webinaire:apropos }
+
+webinaire_membre:
+    pattern:  /membre
+    defaults: { _controller: WbnWebinaireBundle:Webinaire:membre }
