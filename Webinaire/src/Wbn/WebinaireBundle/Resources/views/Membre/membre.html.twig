@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{% block title %}Membre{% endblock %}</title>
+        <title>{% block title %}Member{% endblock %}</title>
 
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('css/membre.css') }}" type="text/css" />
@@ -13,13 +13,9 @@
     
     <div id="wrapper">
 
-<header>{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-    Connecté en tant que {{ app.user.username }} - <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
-{% else %}
-    <a href="{{ path('fos_user_security_login') }}">Connexion</a>
-{% endif %}
-		<h1></h1>
-		<h2></h2>
+<header>
+    <h1></h1>
+    <h2></h2>
         
         
           <br>
@@ -28,41 +24,41 @@
           
           
 <div class="step" style="background-color: #999; padding-bottom:10px;"><h3><span>TUTORIAL VIDEO:</span> Learn How To Use The Script!</h3></div>
-	<div id="subStepTopCorner"></div>
-	<div align="center">
+  <div id="subStepTopCorner"></div>
+  <div align="center">
     <br>
     
             <p align="center">
-            	<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="640" height="409" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">
-              		<param name="bgcolor" value="white">
-              		<param name="flashvars" value="file=http://www.evergreenbusinesssystem.com/videos/webinar2-installationvideo-intro.mov">
-              		<param name="src" value="http://www.evergreenbusinesssystem.com/videos/player.swf">
-              		<param name="allowfullscreen" value="false">
-              		<embed type="application/x-shockwave-flash" width="640" height="409" src="http://www.evergreenbusinesssystem.com/videos/player.swf" allowfullscreen="false" flashvars="file=http://www.evergreenbusinesssystem.com/videos/webinar2-installationvideo-intro.mov" bgcolor="white">
-            	</object>
+              <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="640" height="409" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">
+                  <param name="bgcolor" value="white">
+                  <param name="flashvars" value="file=http://www.evergreenbusinesssystem.com/videos/webinar2-installationvideo-intro.mov">
+                  <param name="src" value="http://www.evergreenbusinesssystem.com/videos/player.swf">
+                  <param name="allowfullscreen" value="false">
+                  <embed type="application/x-shockwave-flash" width="640" height="409" src="http://www.evergreenbusinesssystem.com/videos/player.swf" allowfullscreen="false" flashvars="file=http://www.evergreenbusinesssystem.com/videos/webinar2-installationvideo-intro.mov" bgcolor="white">
+              </object>
             </p>
             
      
         
    
             
-            	<div class="clear"></div>
-	<!--end of subStepContainer--></div>
-	<div id="subStepBottomCorner"></div>
+              <div class="clear"></div>
+  <!--end of subStepContainer--></div>
+  <div id="subStepBottomCorner"></div>
             
             <br><br>
         
         
-		<nav>
-			<ul>
-				<!--<li id="newWebinar"><a href="index.php?page=webinarnew">New Webinar</a></li>-->
-				<li id="newWebinar"><a href="{{ path('webinaire_membre') }}"></a></li>
-				<li id="myWebinars"><a href="{{ path('webinaire_membre') }}"></a></li>
-				<li id="analytics"><a href="{{ path('webinaire_membre') }}"></a></li>
-				<li id="contactUs"><a href="{{ path('webinaire_membre') }}"></a></li>
-			</ul>
-		<!--end of nav--></nav>
-	<!--end of header--></header>
+    <nav>
+      <ul>
+        <!--<li id="newWebinar"><a href="index.php?page=webinarnew">New Webinar</a></li>-->
+        <li id="newWebinar"><a href="{{ path('webinaire_membre') }}"></a></li>
+        <li id="myWebinars"><a href="{{ path('webinaire_membre') }}"></a></li>
+        <li id="analytics"><a href="{{ path('webinaire_membre') }}"></a></li>
+        <li id="contactUs"><a href="{{ asset('http://www.evergreenbusinesssystem.com/support.html') }}" target="_blank"></a></li>
+      </ul>
+    <!--end of nav--></nav>
+  <!--end of header--></header>
 
 </div>
 </body>

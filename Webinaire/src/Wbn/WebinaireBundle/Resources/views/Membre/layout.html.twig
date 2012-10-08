@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}Membre{% endblock %}</title>
+
+      
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" >
+            <link rel="stylesheet" href="{{ asset('css/membre.css') }}" type="text/css" />
+   
+    </head>
+    
+<body>
+    
+    <div id="wrapper">
+
+<header>{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+    Connecté en tant que {{ app.user.username }} - <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+{% else %}
+    <a href="{{ path('fos_user_security_login') }}">Connexion</a>
+{% endif %}
+		<h1></h1>
+		<h2></h2>
+        
+        
+          <br>
+          
+          
+          
+  {% block body%}        
+{% endblock %}
+
+</div>
+
+</body>
+</html>
