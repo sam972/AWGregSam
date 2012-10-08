@@ -187,6 +187,11 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Wbn\\WebinaireBundle\\Controller\\WebinaireController::nouveauAction',  '_route' => 'webinaire_nouveau',);
         }
 
+        // webinaire_voir
+        if ($pathinfo === '/voir') {
+            return array (  '_controller' => 'Wbn\\WebinaireBundle\\Controller\\WebinaireController::voirAction',  '_route' => 'webinaire_voir',);
+        }
+
         // fos_user_security_login
         if ($pathinfo === '/login') {
             return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'fos_user_security_login',);

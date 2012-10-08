@@ -105,6 +105,7 @@
   'WbnWebinaireBundle:Membre:layout.html.twig' => '/Users/samuelrenel/Web/AWGregSam/Webinaire/src/Wbn/WebinaireBundle/Resources/views/Membre/layout.html.twig',
   'WbnWebinaireBundle:Membre:membre.html.twig' => '/Users/samuelrenel/Web/AWGregSam/Webinaire/src/Wbn/WebinaireBundle/Resources/views/Membre/membre.html.twig',
   'WbnWebinaireBundle:Membre:nouveau.html.twig' => '/Users/samuelrenel/Web/AWGregSam/Webinaire/src/Wbn/WebinaireBundle/Resources/views/Membre/nouveau.html.twig',
+  'WbnWebinaireBundle:Membre:voir.html.twig' => '/Users/samuelrenel/Web/AWGregSam/Webinaire/src/Wbn/WebinaireBundle/Resources/views/Membre/voir.html.twig',
   'WbnWebinaireBundle:Visiteur:apropos.html.twig' => '/Users/samuelrenel/Web/AWGregSam/Webinaire/src/Wbn/WebinaireBundle/Resources/views/Visiteur/apropos.html.twig',
   'WbnWebinaireBundle:Visiteur:faq.html.twig' => '/Users/samuelrenel/Web/AWGregSam/Webinaire/src/Wbn/WebinaireBundle/Resources/views/Visiteur/faq.html.twig',
   'WbnWebinaireBundle:Visiteur:index.html.twig' => '/Users/samuelrenel/Web/AWGregSam/Webinaire/src/Wbn/WebinaireBundle/Resources/views/Visiteur/index.html.twig',
