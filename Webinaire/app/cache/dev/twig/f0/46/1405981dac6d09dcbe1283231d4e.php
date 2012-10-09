@@ -78,7 +78,7 @@ class __TwigTemplate_f0461405981dac6d09dcbe1283231d4e extends Twig_Template
         <!--<li id=\"newWebinar\"><a href=\"index.php?page=webinarnew\">New Webinar</a></li>-->
         <li id=\"newWebinar\"><a href=\"";
         // line 55
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("webinaire_membre"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("webinaire_nouveau"), "html", null, true);
         echo "\"></a></li>
         <li id=\"myWebinars\"><a href=\"";
         // line 56

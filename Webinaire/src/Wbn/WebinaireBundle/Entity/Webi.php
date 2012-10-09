@@ -127,13 +127,6 @@ class Webi
     private $textheader;
 
     /**
-     * @var boolean $enablevideo
-     *
-     * @ORM\Column(name="enablevideo", type="boolean")
-     */
-    private $enablevideo;
-
-    /**
      * @var boolean $activeraffichagepresentateur
      *
      * @ORM\Column(name="activeraffichagepresentateur", type="boolean")

@@ -44,12 +44,54 @@ class WebinaireController extends Controller
 
     // On crée le FormBuilder grâce à la méthode du contrôleur.
     $formBuilder = $this->createFormBuilder($webi);
-
+/* ->add('datecreation',    'date')
+        ->add('Titre de la page',    'date')
+        ->add('Mot clef de la page',    'date')
+        ->add('Description de la page',    'date')
+        ->add('Nom du Webinaire',    'text')
+        ->add('Timezone du Webinaire',    'date')
+        ->add('Plannification',    'date')
+        ->add('Activer la plannification',    'date')
+        ->add('Afficher combien de jours?',    'date')
+        ->add('Nombre de session/jours',    'date')
+        ->add('Heure des sessions',    'date')
+        ->add('Sujet du Webinaire',    'date')
+        ->add('Nom du présentateur',    'date')
+        ->add('Image du présentateur',    'date')
+        ->add('Votre Headear (Slogant)',    'date')
+        ->add('Activer l\'affichage de la déscription',    'date')
+        ->add('Déscription du Webinaire',    'date')
+        ->add('URL compléte de la vidéo de remerciment',    'date')
+        ->add('Afficher Video Compte à rebour',    'date')
+        ->add('URL compléte de la vidéo compte à rebour',    'date')
+        ->add('URL compléte de la vidéo live',    'date')
+        ->add('Durée de la Vidéo',    'date');*/
     // On ajoute les champs de l'entité que l'on veut à notre formulaire.
     $formBuilder
-        ->add('nom',    'text')
-        ->add('datecreation',    'date');
-       
+        ->add('nom')
+       // ->add('datecreation',    'date')
+        ->add('titrepage')
+        ->add('motclepage')
+        ->add('descriptionpage')
+        ->add('timezone')
+        ->add('plannification')
+        ->add('activerplannification')
+        ->add('nombredejouraafficher')
+        ->add('nombresessionjour')
+        ->add('heuredessessions')
+        ->add('sujetwebinaire')
+        ->add('nompresentateur')
+        ->add('imagepresentateur')
+        ->add('textheader')
+        ->add('activeraffichagedescription')
+        ->add('activeraffichagedescription')
+        ->add('activeraffichagepresentateur')
+        ->add('descriptionwebinaire')
+        ->add('urlvideoremerciment')
+        ->add('affichervideocomptearebour')
+        ->add('urlvideocomptearebour')
+        ->add('urlvideowebinaire')
+        ->add('dureevideo');       
 
     // Pour l'instant, pas de tags, on les gérera plus tard.
 
