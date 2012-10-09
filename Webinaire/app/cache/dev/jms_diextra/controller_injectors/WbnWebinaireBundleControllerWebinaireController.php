@@ -11,7 +11,7 @@ class WebinaireController__JMSInjector
 {
     public static function inject($container) {
         require_once '/Users/samuelrenel/Web/AWGregSam/Webinaire/app/cache/dev/jms_diextra/proxies/Wbn-WebinaireBundle-Controller-WebinaireController.php';
-        $a = new \JMS\AopBundle\Aop\InterceptorLoader($container, array('Wbn\\WebinaireBundle\\Controller\\WebinaireController' => array('membreAction' => array(0 => 'security.access.method_interceptor'))));
+        $a = new \JMS\AopBundle\Aop\InterceptorLoader($container, array('Wbn\\WebinaireBundle\\Controller\\WebinaireController' => array('membreAction' => array(0 => 'security.access.method_interceptor'), 'nouveauAction' => array(0 => 'security.access.method_interceptor'))));
         $instance = new \EnhancedProxy_ca8c0b01b7eb7a704417ab4bdc46fb36cfbdb64d\__CG__\Wbn\WebinaireBundle\Controller\WebinaireController();
         $instance->__CGInterception__setLoader($a);
         return $instance;

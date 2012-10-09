@@ -25,17 +25,21 @@ class __TwigTemplate_0eb368ed7ba1fc9b21053eb6a9cd95c9 extends Twig_Template
     public function block_body($context, array $blocks = array())
     {
         // line 3
-        echo "<form method=\"post\" ";
+        echo "<div class=\"site\">
+\t\t<div id=\"wrap\">
+\t\t<form method=\"post\" ";
+        // line 5
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'enctype');
         echo ">
 \t
 \t";
-        // line 5
+        // line 7
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'widget');
         echo "
 \t
 \t<input type=\"submit\" />
 </form>
+</div></div>
 ";
     }
 
@@ -51,6 +55,6 @@ class __TwigTemplate_0eb368ed7ba1fc9b21053eb6a9cd95c9 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  32 => 5,  26 => 3,  20 => 2,  18 => 1,);
+        return array (  35 => 7,  30 => 5,  26 => 3,  20 => 2,  18 => 1,);
     }
 }

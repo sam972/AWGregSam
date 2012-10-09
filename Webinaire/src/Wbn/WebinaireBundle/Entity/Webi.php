@@ -10,8 +10,14 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Wbn\WebinaireBundle\Entity\WebiRepository")
  */
+
 class Webi
 {
+     /**
+     * @ORM\ManyToOne(targetEntity="Wbn\UserBundle\Entity\User")
+     * @ORM\JoinColumn(nullable=false)
+     */
+
     /**
      * @var integer $id
      *
@@ -744,4 +750,27 @@ class Webi
     {
         return $this->dureevideo;
     }
+
+    /**
+     * Set user
+     *
+     * @param Wbn\UserBundle\Entity\User $user
+     * @return Webi
+     */
+    public function setUser(\Wbn\UserBundle\Entity\User $user)
+    {
+        $this->user = $user;
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return Wbn\UserBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
 }

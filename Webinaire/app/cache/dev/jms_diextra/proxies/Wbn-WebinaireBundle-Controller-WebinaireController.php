@@ -12,6 +12,15 @@ class WebinaireController extends \Wbn\WebinaireBundle\Controller\WebinaireContr
 {
     private $__CGInterception__loader;
 
+    public function nouveauAction()
+    {
+        $ref = new \ReflectionMethod('Wbn\\WebinaireBundle\\Controller\\WebinaireController', 'nouveauAction');
+        $interceptors = $this->__CGInterception__loader->loadInterceptors($ref, $this, array());
+        $invocation = new \CG\Proxy\MethodInvocation($ref, $this, array(), $interceptors);
+
+        return $invocation->proceed();
+    }
+
     public function membreAction()
     {
         $ref = new \ReflectionMethod('Wbn\\WebinaireBundle\\Controller\\WebinaireController', 'membreAction');

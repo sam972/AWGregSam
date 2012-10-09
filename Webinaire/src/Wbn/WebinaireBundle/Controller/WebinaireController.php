@@ -37,10 +37,15 @@ class WebinaireController extends Controller
         return $this->render('WbnWebinaireBundle:Membre:membre.html.twig');
     }
 
+    /**
+     * @Secure(roles="ROLE_MEMBRE")
+     */
     public function nouveauAction()
     {
+        
+
      // On crée un objet Article.
-    $webi = new Webi();
+    $webi = new Webi;
 
     // On crée le FormBuilder grâce à la méthode du contrôleur.
     $formBuilder = $this->createFormBuilder($webi);
@@ -97,7 +102,24 @@ class WebinaireController extends Controller
 
     // À partir du formBuilder, on génère le formulaire.
     $form = $formBuilder->getForm();
+$request = $this->get('request');
+if( $request->getMethod() == 'POST' )
+    {
+        // On fait le lien Requête <-> Formulaire.
+        $form->bindRequest($request);
 
+        // On vérifie que les valeurs rentrées sont correctes.
+        // (Nous verrons la validation des objets en détail plus bas dans ce chapitre.)
+        if( $form->isValid() )
+        {
+            // On l'enregistre notre objet $article dans la base de données.
+            $em = $this->getDoctrine()->getEntityManager();
+            $em->persist($webi);
+            $em->flush();
+
+            // On redirige vers la page d'accueil, par exemple.
+            return $this->redirect($this->generateUrl('sdzblog_accueil'));
+        }
     // On passe la méthode createView() du formulaire à la vue
     // afin qu'elle puisse afficher le formulaire toute seule.
        
