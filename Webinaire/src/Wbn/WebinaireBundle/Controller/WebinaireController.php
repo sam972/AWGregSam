@@ -126,4 +126,4 @@ if( $request->getMethod() == 'POST' )
         return $this->render('WbnWebinaireBundle:Membre:nouveau.html.twig', array(
         'form' => $form->createView(),));
     }
-}
+} //Greg
