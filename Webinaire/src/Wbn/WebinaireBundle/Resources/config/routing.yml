@@ -25,3 +25,7 @@ webinaire_nouveau:
 webinaire_voir:
     pattern:  /voir
     defaults: { _controller: WbnWebinaireBundle:Webinaire:voir }
+
+webinaire_infos:
+    pattern: /infos
+    defaults: { _controller: WbnWebinaireBundle:Webinaire:infos }

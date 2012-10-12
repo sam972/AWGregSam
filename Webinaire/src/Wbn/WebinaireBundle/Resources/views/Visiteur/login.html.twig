@@ -1,0 +1,62 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    Se conncter - {{ parent() }} 
+{% endblock %}
+
+{% block body1 %}
+
+<img src="{{ asset('images/h1.png') }}" width="960" height="48"></center>
+        </div>
+<div id="subPages">
+<div id="botCont">
+            <div>
+                
+            <div class="botBox" style="margin-top: 15px;">
+                <center><h2>Connectez vous</h2></center>
+                <div align="center">
+                <hr>
+                <br>
+                <form name="login" method="post" action="">
+                  <table align="center" class="vedit">
+                    <tbody>
+                      <tr>
+                        <th>Utilisateur</th>
+                        <td><input type="text" name="amember_login" size="15" value=""></td>
+                      </tr>
+                      <br>
+                      <tr>
+                        <th>Mot de passe</th>
+                        <td><input type="password" name="amember_pass" size="15"></td>
+                      </tr>
+                      <tr>
+                        <th>Se souvenir de moi</th>
+                        <td align="right"><input type="checkbox" name="souvenir"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <br>
+                  
+                  <input type="submit" value="   Se connecter   ">
+                  <br>
+                  <br>
+                  <hr>
+                  <br>
+                  </div>
+            </div>
+    
+</div>
+       </div>
+</div> </div>
+        
+
+
+<br>
+
+{% endblock %}
+{% block body2 %}  
+<p>
+  <img src="{{ asset('images/designed-to-work-with2.jpg') }}" width="960" height="211">
+</p>
+
+{% endblock %}
