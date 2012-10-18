@@ -1,24 +1,29 @@
+{% extends "::base.html.twig" %}
+{% block title %}
+    Se conncter - {{ parent() }} 
+{% endblock %}
 
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{% block title %}Sam's Blog{% endblock %}</title>
-     
-        {% block design %}
-            <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" >
-        {% endblock %}
-    </head>
-<div class="container">
+    
+{% block body1 %}
 
-
+<img src="{{ asset('images/h1.png') }}" width="960" height="48"></center>
+        </div>
+<div id="subPages">
+<div id="botCont">
+            <div>
+                
+            <div class="botBox" style="margin-top: 15px;">
+                <center><h2>Connectez vous</h2></center>
+                <div align="center">
+                <hr>
+                <br>
 
         <div>
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
                 <a href="{{ path('fos_user_security_logout') }}">
                     {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                </a>
+                </a> 
             {% else %}
                 <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
             {% endif %}
@@ -33,7 +38,23 @@
         <div>
             {% block fos_user_content %}
             {% endblock fos_user_content %}
-        </div>    </div>
+        </div>
+        <br>
+        <hr> 
+        
+    </div>  
+</div>
+</div>
+</div>
+</div>
+<br>
+</div>
+{% endblock %}
+{% block body2 %}  
+<p>
+  <img src="{{ asset('images/designed-to-work-with2.jpg') }}" width="960" height="211">
+</p>
 
-    </body>
-</html>
+{% endblock %} 
+
+    
