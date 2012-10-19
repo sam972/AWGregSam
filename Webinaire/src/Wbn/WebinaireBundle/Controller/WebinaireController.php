@@ -9,7 +9,7 @@ use Symfony\Component\Form\FormBuilder;
 class WebinaireController extends Controller
 {
     public function indexAction()
-    {
+    {//test
         return $this->render('WbnWebinaireBundle:Visiteur:index.html.twig');
     }
 
