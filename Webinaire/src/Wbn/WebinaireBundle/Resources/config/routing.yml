@@ -29,3 +29,15 @@ webinaire_voir:
 webinaire_infos:
     pattern: /infos
     defaults: { _controller: WbnWebinaireBundle:Webinaire:infos }
+
+webinaire_liste:
+    pattern: /liste/{page}
+    defaults: { _controller: WbnWebinaireBundle:Webinaire:liste,  page: 1 }
+    requirements:
+        page:  \d+
+
+sdzblog_modifierwebi:
+    pattern:   /webi/{id}
+    defaults:  { _controller: WbnWebinaireBundle:Webinaire:modifierwebi }
+    requirements:
+        id:  \d+

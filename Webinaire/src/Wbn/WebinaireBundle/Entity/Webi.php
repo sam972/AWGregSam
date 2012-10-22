@@ -188,6 +188,10 @@ class Webi
      */
     private $dureevideo;
 
+    public function __construct()
+    {
+        $this->datecreation = new \Datetime();
+    }
 
     /**
      * Get id
