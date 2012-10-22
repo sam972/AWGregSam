@@ -8,6 +8,7 @@ use Wbn\WebinaireBundle\Entity\Webi;
 use Symfony\Component\Form\FormBuilder;
 use Wbn\WebinaireBundle\Form\WebiHandler;
 use Wbn\WebinaireBundle\Form\WebiType;
+use Symfony\Component\Form\FormTypeInterface;
 
 class WebinaireController extends Controller
 {
@@ -43,7 +44,7 @@ class WebinaireController extends Controller
      
        
         return $this->render('WbnWebinaireBundle:Membre:membre.html.twig');
-    }
+    }        
 
      /**
      * @Secure(roles="ROLE_MEMBRE")
@@ -58,61 +59,18 @@ class WebinaireController extends Controller
             throw $this->createNotFoundException('Webinaire [id='.$id.'] inexistant');
         }
 
+ // On crée le formulaire
+        $form = $this->createForm(new WebiType, $webi);
 
-    // On crée le FormBuilder grâce à la méthode du contrôleur.
-    $formBuilder = $this->createFormBuilder($webi);
-        // On passe l'$article récupéré au formulaire
-         $formBuilder
-        ->add('nom')
-       // ->add('datecreation',    'date')
-        ->add('titrepage')
-         ->add('motclepage')
-        ->add('descriptionpage')
-        ->add('timezone')
-        ->add('plannification')
-        ->add('activerplannification')
-        ->add('nombredejouraafficher')
-        ->add('nombresessionjour')
-        ->add('heuredessessions')
-        ->add('sujetwebinaire')
-        ->add('nompresentateur')
-        ->add('imagepresentateur')
-        ->add('textheader')
-        ->add('activeraffichagedescription')
-        ->add('activeraffichagedescription')
-        ->add('activeraffichagepresentateur')
-        ->add('descriptionwebinaire')
-        ->add('urlvideoremerciment')
-        ->add('affichervideocomptearebour')
-        ->add('urlvideocomptearebour')
-        ->add('urlvideowebinaire')
-        ->add('dureevideo');       
+        // On crée le gestionnaire pour ce formulaire, avec les outils dont il a besoin
+        $formHandler = new WebiHandler($form, $this->get('request'), $this->getDoctrine()->getEntityManager());
 
-    // Pour l'instant, pas de tags, on les gérera plus tard.
-
-    // À partir du formBuilder, on génère le formulaire.
-    $form = $formBuilder->getForm();
- // On récupère la requête.
-    $request = $this->get('request');
-
-    // On vérifie qu'elle est de type « POST ».
-    if( $request->getMethod() == 'POST' )
-    {
-        // On fait le lien Requête <-> Formulaire.
-        $form->bindRequest($request);
-
-        // On vérifie que les valeurs rentrées sont correctes.
-        // (Nous verrons la validation des objets en détail plus bas dans ce chapitre.)
-        if( $form->isValid() )
+        // On exécute le traitement du formulaire. S'il retourne true, alors le formulaire a bien été traité
+        if( $formHandler->process() )
         {
-            // On l'enregistre notre objet $article dans la base de données.
-            $em = $this->getDoctrine()->getEntityManager();
-            $em->persist($webi);
-            $em->flush();
-
         
             return $this->redirect( $this->generateUrl('webinaire_liste', array('id' => $webi->getId())) );
-        }}
+        }
 
         return $this->render('WbnWebinaireBundle:Membre:modifierwebi.html.twig', array( 'id' => $webi->getId(), 'webi' => $webi,
             'form' => $form->createView(),
@@ -169,83 +127,20 @@ class WebinaireController extends Controller
      // On crée un objet Article.
     $webi = new Webi();
 
-    // On crée le FormBuilder grâce à la méthode du contrôleur.
-    $formBuilder = $this->createFormBuilder($webi);
-/* ->add('datecreation',    'date')
-        ->add('Titre de la page',    'date')
-        ->add('Mot clef de la page',    'date')
-        ->add('Description de la page',    'date')
-        ->add('Nom du Webinaire',    'text')
-        ->add('Timezone du Webinaire',    'date')
-        ->add('Plannification',    'date')
-        ->add('Activer la plannification',    'date')
-        ->add('Afficher combien de jours?',    'date')
-        ->add('Nombre de session/jours',    'date')
-        ->add('Heure des sessions',    'date')
-        ->add('Sujet du Webinaire',    'date')
-        ->add('Nom du présentateur',    'date')
-        ->add('Image du présentateur',    'date')
-        ->add('Votre Headear (Slogant)',    'date')
-        ->add('Activer l\'affichage de la déscription',    'date')
-        ->add('Déscription du Webinaire',    'date')
-        ->add('URL compléte de la vidéo de remerciment',    'date')
-        ->add('Afficher Video Compte à rebour',    'date')
-        ->add('URL compléte de la vidéo compte à rebour',    'date')
-        ->add('URL compléte de la vidéo live',    'date')
-        ->add('Durée de la Vidéo',    'date');*/
-    // On ajoute les champs de l'entité que l'on veut à notre formulaire.
-    $formBuilder
-        ->add('nom')
-       // ->add('datecreation',    'date')
-        ->add('titrepage')
-         ->add('motclepage')
-        ->add('descriptionpage')
-        ->add('timezone')
-        ->add('plannification')
-        ->add('activerplannification')
-        ->add('nombredejouraafficher')
-        ->add('nombresessionjour')
-        ->add('heuredessessions')
-        ->add('sujetwebinaire')
-        ->add('nompresentateur')
-        ->add('imagepresentateur')
-        ->add('textheader')
-        ->add('activeraffichagedescription')
-        ->add('activeraffichagedescription')
-        ->add('activeraffichagepresentateur')
-        ->add('descriptionwebinaire')
-        ->add('urlvideoremerciment')
-        ->add('affichervideocomptearebour')
-        ->add('urlvideocomptearebour')
-        ->add('urlvideowebinaire')
-        ->add('dureevideo');       
+        // On crée le formulaire
+        $form = $this->createForm(new WebiType, $webi);
 
-    // Pour l'instant, pas de tags, on les gérera plus tard.
+        // On crée le gestionnaire pour ce formulaire, avec les outils dont il a besoin
+        $formHandler = new WebiHandler($form, $this->get('request'), $this->getDoctrine()->getEntityManager());
 
-    // À partir du formBuilder, on génère le formulaire.
-    $form = $formBuilder->getForm();
- // On récupère la requête.
-    $request = $this->get('request');
-
-    // On vérifie qu'elle est de type « POST ».
-    if( $request->getMethod() == 'POST' )
-    {
-        // On fait le lien Requête <-> Formulaire.
-        $form->bindRequest($request);
-
-        // On vérifie que les valeurs rentrées sont correctes.
-        // (Nous verrons la validation des objets en détail plus bas dans ce chapitre.)
-        if( $form->isValid() )
+        // On exécute le traitement du formulaire. S'il retourne true, alors le formulaire a bien été traité
+        if( $formHandler->process() )
         {
-            // On l'enregistre notre objet $article dans la base de données.
-            $em = $this->getDoctrine()->getEntityManager();
-            $em->persist($webi);
-            $em->flush();
-
+    
             // On redirige vers la page d'accueil, par exemple.
             return $this->redirect($this->generateUrl('webinaire_membre'));
         }
-    }
+    
 
     // À ce stade :
     // - soit la requête est de type « GET », donc le visiteur vient d'arriver sur la page et veut voir le formulaire ;

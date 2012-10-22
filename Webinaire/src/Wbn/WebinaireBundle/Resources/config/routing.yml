@@ -41,3 +41,7 @@ sdzblog_modifierwebi:
     defaults:  { _controller: WbnWebinaireBundle:Webinaire:modifierwebi }
     requirements:
         id:  \d+
+
+webinaire_testhandler:
+    pattern:  /test
+    defaults: { _controller: WbnWebinaireBundle:Webinaire:test }
