@@ -1,4 +1,11 @@
-
+{% extends "WbnWebinaireBundle:Membre:membre.html.twig" %}
+{% block title %}
+	Nouveau
+{% endblock %}
+{% block body %}
+<section>
+<div id="subStepTopCorner"></div>
+<div id="subStepContainer">
 	<ul>
 		{% for webis in webi %}
 			<li>
@@ -21,5 +28,9 @@
     		{% endfor %}
     	</ul>
     </div>
+</div>
+<div id="subStepBottomCorner"></div>
+</section>
+{% endblock %}
 
 

@@ -1,6 +1,158 @@
+{% extends "WbnWebinaireBundle:Membre:membre.html.twig" %}
+{% block title %}
+	Nouveau
+{% endblock %}
+{% block body %}
+
 <form method="post" {{ form_enctype(form) }}>
+<section>
+  <div id="subStepTopCorner"></div>
+  <div id="subStepContainer">
+
+<br>
+	<div>
+		{{ form_label(form.nom, "Nom") }}
+		{{ form_errors(form.nom) }}
+		{{ form_widget(form.nom) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.titrepage, "Titre page") }}
+		{{ form_errors(form.titrepage) }}
+		{{ form_widget(form.titrepage) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.motclepage, "Mot clé page") }}
+		{{ form_errors(form.motclepage) }}
+		{{ form_widget(form.motclepage) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.descriptionpage, "Description page") }}
+		{{ form_errors(form.descriptionpage) }}
+		{{ form_widget(form.descriptionpage) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.timezone, "Timezone") }}
+		{{ form_errors(form.timezone) }}
+		{{ form_widget(form.timezone) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.plannification, "Plannification") }}
+		{{ form_errors(form.plannification) }}
+		{{ form_widget(form.plannification) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.activerplannification, "Activer plannification") }}
+		{{ form_errors(form.activerplannification) }}
+		{{ form_widget(form.activerplannification) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.nombredejouraafficher, "Nombre de jour à afficher") }}
+		{{ form_errors(form.nombredejouraafficher) }}
+		{{ form_widget(form.nombredejouraafficher) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.nombresessionjour, "Nombre de session par jour") }}
+		{{ form_errors(form.nombresessionjour) }}
+		{{ form_widget(form.nombresessionjour) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.heuredessessions, "Heure des sessions") }}
+		{{ form_errors(form.heuredessessions) }}
+		{{ form_widget(form.heuredessessions) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.sujetwebinaire, "Sujet Webinaire") }}
+		{{ form_errors(form.sujetwebinaire) }}
+		{{ form_widget(form.sujetwebinaire) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.nompresentateur, "Nom du présentateur") }}
+		{{ form_errors(form.nompresentateur) }}
+		{{ form_widget(form.nompresentateur) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.imagepresentateur, "Image du présentateur") }}
+		{{ form_errors(form.imagepresentateur) }}
+		{{ form_widget(form.imagepresentateur) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.textheader, "Textheader") }}
+		{{ form_errors(form.textheader) }}
+		{{ form_widget(form.textheader) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.activeraffichagedescription, "Activer affichage description") }}
+		{{ form_errors(form.activeraffichagedescription) }}
+		{{ form_widget(form.activeraffichagedescription) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.activeraffichagepresentateur, "Activer affichage présentateur") }}
+		{{ form_errors(form.activeraffichagepresentateur) }}
+		{{ form_widget(form.activeraffichagepresentateur) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.descriptionwebinaire, "Description Webinaire") }}
+		{{ form_errors(form.descriptionwebinaire) }}
+		{{ form_widget(form.descriptionwebinaire) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.urlvideoremerciment, "Url vidéo remerciment") }}
+		{{ form_errors(form.urlvideoremerciment) }}
+		{{ form_widget(form.urlvideoremerciment) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.affichervideocomptearebour, "Afficher vidéo compte à rebour") }}
+		{{ form_errors(form.affichervideocomptearebour) }}
+		{{ form_widget(form.affichervideocomptearebour) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.urlvideocomptearebour, "Url vidéo compte à rebour") }}
+		{{ form_errors(form.urlvideocomptearebour) }}
+		{{ form_widget(form.urlvideocomptearebour) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.urlvideowebinaire, "Url vidéo Webinaire") }}
+		{{ form_errors(form.urlvideowebinaire) }}
+		{{ form_widget(form.urlvideowebinaire) }}
+	</div>
+	<br>
+	<div>
+		{{ form_label(form.dureevideo, "Durée vidéo") }}
+		{{ form_errors(form.dureevideo) }}
+		{{ form_widget(form.dureevideo) }}
+	</div>
+	<br>
+	
+<br>
 	
 	{{ form_widget(form) }}
 	
-	<input type="submit" />
+	<input type="submit" value="  Valider  " />
+<br>
+
+<br>
+</div>
 </form>
+<div id="subStepBottomCorner"></div>
+</section>
+{% endblock %}
