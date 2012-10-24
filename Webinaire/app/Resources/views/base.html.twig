@@ -21,13 +21,12 @@
 				<ul id="nav" style="float:right;">{% if is_granted('ROLE_MEMBRE') %}<li>
     <a href="{{ path('webinaire_membre') }}">Mes Webinaires</a></li>
 {% endif %}
-					<li>
-						<a href="{{ path('webinaire_apropos') }}" id="about">À propos</a>
+					
+					<li>{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+						<a href="{{ path('fos_user_profile_show') }}" id="about">Mon Compte</a>
+						{% endif %}
 					</li>
 					
-					<li>
-						<a href="{{ path('webinaire_support') }}" id="support">Support</a>
-					</li>
 					<li> {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
                 <a href="{{ path('fos_user_security_logout') }}">
@@ -64,11 +63,17 @@
 									<a href="{{ path('webinaire_accueil') }}">Contact</a>
 								</li>
 								<li>
+						<a href="{{ path('webinaire_support') }}" id="support">Support</a>
+					</li>
+								<li>
 									<a href="{{ path('webinaire_infos') }}">Infos</a>
 								</li>
 								<li>
 									<a href="{{ path('webinaire_accueil') }}">Anti-spam</a>
 								</li>
+								<li>
+						<a href="{{ path('webinaire_apropos') }}" id="about">À propos</a>
+					</li>s
 								<li>
 									<a href="{{ path('webinaire_accueil') }}">Déclaration</a>
 								</li>
