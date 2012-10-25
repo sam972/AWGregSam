@@ -22,6 +22,11 @@ class WebinaireController extends Controller
         return $this->render('WbnWebinaireBundle:Visiteur:faq.html.twig');
     }
 
+    public function statAction()
+    {
+        return $this->render('WbnWebinaireBundle:Membre:stat.html.twig');
+    }
+
     public function infosAction()
     {
         return $this->render('WbnWebinaireBundle:Visiteur:login.html.twig');
@@ -121,7 +126,10 @@ class WebinaireController extends Controller
             'nb_pages' => $nb_pages // Et le nombre total de pages.
         ));
     }
-
+    
+    /**
+     * @Secure(roles="ROLE_MEMBRE")
+     */
     public function nouveauAction()
     {
      // On crée un objet Article.

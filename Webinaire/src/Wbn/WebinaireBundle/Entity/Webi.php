@@ -100,7 +100,7 @@ class Webi
     /**
      * @var array $heuredessessions
      *
-     * @ORM\Column(name="heuredessessions", type="array")
+     * @ORM\Column(name="heuredessessions", type="string", length=255)
      */
     private $heuredessessions;
 
