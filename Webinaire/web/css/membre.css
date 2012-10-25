@@ -105,7 +105,7 @@ section	{
 section div.step	{
 	width: 965px;
 	height: 48px;
-	background: url('images/step.png') no-repeat;
+	background: url(../images/step.png) no-repeat;
 	margin-bottom: 7px;
 }
 
@@ -127,7 +127,7 @@ div.step h3 span	{
 section div.subStep	{
 	width: 933px;
 	height: 39px;
-	background: url('images/subStep.png') no-repeat;
+	background: url(../images/subStep.png) no-repeat;
 	margin: 0px 0px 7px 15px;
 }
 
@@ -144,19 +144,19 @@ div.subStep h3	{
 section	div#subStepTopCorner	{
 	width: 965px;
 	height: 20px;
-	background: url('images/subStepTopCorner.png') no-repeat;
+	background: url(../images/subStepTopCorner.png) no-repeat;
 }
 
 section	div#subStepBottomCorner	{
 	width: 965px;
 	height: 26px;
-	background: url('images/subStepBottomCorner.png') no-repeat;
+	background: url(../images/subStepBottomCorner.png) no-repeat;
 	margin-bottom: 25px;
 }
 
 section	div#subStepContainer	{
 	width: 965px;
-	background: url('images/subStepBg.png') repeat-y;
+	background: url(../images/subStepBg.png) repeat-y;
 	font-family: 'Verdana', Arial, serif;
 	font-size: 13px;
 	color: #344249;

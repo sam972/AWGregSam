@@ -3,10 +3,15 @@
 	Modifier
 {% endblock %}
 {% block body %}
-<section>
-<div id="subStepTopCorner"></div>
-<div id="subStepContainer">
 <form method="post" {{ form_enctype(form) }}>
+<section>
+<div class="step">
+<h3>
+  <div>METATAGS DE MON WEBINAIRE</div>
+</h3>
+</div>
+  <div id="subStepTopCorner"></div>
+  <div id="subStepContainer">
 
 <br>
 	<div>
@@ -32,7 +37,15 @@
 		{{ form_errors(form.descriptionpage) }}
 		{{ form_widget(form.descriptionpage) }}
 	</div>
-	<br>
+  </div>
+<div id="subStepBottomCorner"></div>
+<div class="step">
+<h3>
+  <div>MON WEBINAIRE DANS LE TEMPS</div>
+</h3>
+</div>
+<div id="subStepTopCorner"></div>
+<div id="subStepContainer">
 	<div>
 		{{ form_label(form.timezone, "Timezone") }}
 		{{ form_errors(form.timezone) }}
@@ -69,6 +82,15 @@
 		{{ form_widget(form.heuredessessions) }}
 	</div>
 	<br>
+	</div>
+<div id="subStepBottomCorner"></div>
+<div class="step">
+<h3>
+  <div>ATTRIBUTS DE MON WEBINAIRE</div>
+</h3>
+</div>
+<div id="subStepTopCorner"></div>
+<div id="subStepContainer">
 	<div>
 		{{ form_label(form.sujetwebinaire, "Sujet Webinaire") }}
 		{{ form_errors(form.sujetwebinaire) }}
@@ -146,11 +168,12 @@
 	
 	{{ form_widget(form) }}
 	
-	<input type="submit" value="  Valider  " />
+	<center><input type="submit" value="  Valider  " /></center>
 <br>
-</form>
+
 <br>
 </div>
+</form>
 <div id="subStepBottomCorner"></div>
 </section>
 {% endblock %}
