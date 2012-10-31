@@ -12,6 +12,10 @@ div#wrapper	{
 	margin: auto;
 }
 
+div#liste {
+	margin-left: 10px;
+}
+
 ul { list-style-type: none; }
 /*****************************/
 /********* HEADER ************/
